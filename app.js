@@ -7,14 +7,14 @@ const path = require('path');
 const app = express();
 app.use(bodyParser.json());
 
-// MySQL connection setup
-// const db = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'redhat',
-//     database: 'emp_db'
-// });
-const db = mysql.createConnection('mysql://root:redhat@localhost/emp_db');
+ MySQL connection setup
+ const db = mysql.createConnection({
+     host: 'https://whitedevil0712.github.io/redis-demo/',
+     user: 'root',
+     password: 'redhat',
+     database: 'emp_db'
+ });
+//const db = mysql.createConnection('mysql://root:redhat@localhost/emp_db');
 
 db.connect(err => {
     if (err) {
@@ -26,8 +26,8 @@ db.connect(err => {
 
 //Redis connection setup
 const redis = new Redis.Cluster([
+   { port: 6379, host: '192.168.96.101' },
    { port: 6379, host: '192.168.96.102' },
-   { port: 6379, host: '192.168.96.106' },
    { port: 6379, host: '192.168.96.103' }
 ]);
 
