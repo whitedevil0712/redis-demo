@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
  MySQL connection setup
  const db = mysql.createConnection({
-     host: 'https://whitedevil0712.github.io/redis-demo/',
+     host: 'localhost',
      user: 'root',
      password: 'redhat',
      database: 'emp_db'
@@ -26,9 +26,9 @@ db.connect(err => {
 
 //Redis connection setup
 const redis = new Redis.Cluster([
-   { port: 6379, host: '192.168.96.101' },
-   { port: 6379, host: '192.168.96.102' },
-   { port: 6379, host: '192.168.96.103' }
+   { port: 6379, host: '192.168.96.101' , password: 'kedar' },
+   { port: 6379, host: '192.168.96.102' , password: 'kedar' },
+   { port: 6379, host: '192.168.96.103' , password: 'kedar' }
 ]);
 
 // Serve static files (HTML, CSS, JS)
