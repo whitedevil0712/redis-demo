@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
  MySQL connection setup
  const db = mysql.createConnection({
-     host: 'http://localhost:3000/',
+     host: '106.51.75.18',
      user: 'root',
      password: 'redhat',
      database: 'emp_db'
